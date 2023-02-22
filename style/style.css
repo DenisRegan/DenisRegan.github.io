@@ -3,9 +3,6 @@
 		display:flex;
 	}
 }
-
-
-
 body{
 	margin:0;
 	font-style:helvetica;
@@ -121,4 +118,8 @@ li a:hover{
 	display:inline;
 	font-size:1.3em;
 	padding-left:10px;
+
+}
+.navlink{
+	color:white;
 }
