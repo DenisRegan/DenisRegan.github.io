@@ -25,14 +25,13 @@ function playRPS(){
 	
 	var randChoice;
 	var userChoice;
-	var randNum = Math.floor(Math.random() * 3) + 1;
 	var gameCount=3; //variable to store number of times the game is played
 	var userWin= false;  //varible to store if user has won
 	
 	
-	while( (gameCount>0) && (userWin == false) ){
+	while( (gameCount>0) && (userWin == false) ){ 
 		
-		var randNum = Math.floor(Math.random() * 3) + 1;
+		var randNum = Math.floor(Math.random() * 3) + 1; //generate a random number
 		//Convert random number to rock,paper or scissors
 		if (randNum ==1){
 			randChoice="Rock";
@@ -62,7 +61,7 @@ function playRPS(){
 			}
 			//rock vs scissors = rock wins
 			if(userInput.toLowerCase()== "rock"  &&  randChoice.toLowerCase()=="scissors"){
-				alert(userInput + " vs "+ randChoice + ": User wins!");
+				alert(userInput + " vs "+ randChoice + ": User wins! Gamer over");
 				userWin = true;
 			}
 			//paper vs scissors = scissors wins
@@ -71,7 +70,7 @@ function playRPS(){
 			}
 			//paper vs rock = paper wins
 			if(userInput.toLowerCase()=="paper"  &&  randChoice.toLowerCase()=="rock"){
-				alert(userInput + " vs "+ randChoice + ": User wins!");
+				alert(userInput + " vs "+ randChoice + ": User wins! Gamer over");
 				userWin = true;
 			}
 			//scissors vs rock = rock wins
@@ -80,7 +79,7 @@ function playRPS(){
 			}
 			//scissors vs paper = scissors wins
 			if(userInput.toLowerCase()=="scissors"  &&  randChoice.toLowerCase()=="paper"){
-				alert(userInput + " vs "+ randChoice + ": User wins!");
+				alert(userInput + " vs "+ randChoice + ": User wins! Game over");
 				userWin = true;
 			}
 			
@@ -93,8 +92,11 @@ function playRPS(){
 		
 		gameCount--;
 	}
+	alert(" Game has been played the maximum of 3 times, Game over");
+	
 	
 	
 	
 	
 }
+
