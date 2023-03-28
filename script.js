@@ -92,7 +92,9 @@ function playRPS(){
 		
 		gameCount--;
 	}
+	if (gameCount==0){
 	alert(" Game has been played the maximum of 3 times, Game over");
+	}
 	
 	
 	
