@@ -92,7 +92,7 @@ function playRPS(){
 		
 		gameCount--;
 	}
-	if (gameCount==0){
+	if ( (gameCount== 0) && (userWin!=true) ){//next line should only be displayed after 3 user games
 	alert(" Game has been played the maximum of 3 times, Game over");
 	}
 	
