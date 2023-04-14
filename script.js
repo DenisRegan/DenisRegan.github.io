@@ -1,104 +1,51 @@
-function printLyrics(){
-	var count=99;
-	while(count >= 0){
-		if(count>2){
-			document.getElementById("main").innerHTML+="</br>"+ count + " bottles of beer on the wall,"+ count + " bottles of beer"+
-			" Take one down and pass it around,"+(count-1)+" bottles of beer on the wall"+"</br>";
-		}
-		else if(count==2){
-			document.getElementById("main").innerHTML+="</br>"+ count + " bottles of beer on the wall,"+ count + " bottles of beer"+
-			" Take one down and pass it around,"+(count-1)+" bottle of beer on the wall"+"</br>";
-		}
-		else if(count==1){
-			document.getElementById("main").innerHTML+="</br>"+ count + " bottle of beer on the wall,"+ count + " bottle of beer"+
-			" Take one down and pass it around,"+ "no more bottles of beer on the wall"+"</br>";		
-		}
-		count--;
+function enterSubjects(){
+	document.getElementById("main").innerHTML= ""; //clear screen if running application again
+	var average=0; //variable to hold results average
+	var numSubjects=prompt("Please enter number of subjects you have");
+	var subjectResults=[];//declare array to hold subject results
+	
+	//loop to ask user for results of subjects
+	for(i=0;i<numSubjects;i++){
+		subjectResults[i]= prompt("Please enter result for subject "+ (i+1));
+		
 	}
-	document.getElementById("main").innerHTML+="</br>"+" No more bottles of beer on the wall, no more bottles of beer"+
-	" Go to the store and buy some more, 99 bottles of beer";
+	//get Average
+	for(i=0;i<numSubjects;i++){
+		average=(average  + parseInt(subjectResults[i]));
+		//alert("average= " + average);
+	}
+	average=(average/numSubjects);
 	
-}
-
-
-function playRPS(){
-	
-	var randChoice;
-	var userChoice;
-	var gameCount=3; //variable to store number of times the game is played
-	var userWin= false;  //varible to store if user has won
+	// Print results back to user with overall average and grade
+	for(i=0;i<numSubjects;i++){
+	document.getElementById("main").innerHTML+= ("</br>"+" Result for subject "+(i+1)+" = "+subjectResults[i]+"," );
 	
 	
-	while( (gameCount>0) && (userWin == false) ){ 
-		
-		var randNum = Math.floor(Math.random() * 3) + 1; //generate a random number
-		//Convert random number to rock,paper or scissors
-		if (randNum ==1){
-			randChoice="Rock";
-		}
-		else if (randNum ==2){
-			randChoice="Paper";
-		}
-		else if(randNum ==3){
-			randChoice="Scissors";
-		}
-		
-		
-		
-		//Get user input, validate the input and play game if the input is valid
-		var userInput = prompt("Welcome to rock Paper scissors, please type rock, paper , or scissors");
-		
-		//Play game if user input is valid
-		if(userInput.toLowerCase() =="rock" || userInput.toLowerCase() =="paper" || userInput.toLowerCase() =="scissors"){
-		
-			//
-			if(userInput.toLowerCase() == randChoice.toLowerCase()){
-				alert(userInput + " vs "+ randChoice + ": Draw");
-			}
-			//rock vs paper = paper wins
-			if(userInput.toLowerCase()== "rock"  &&  randChoice.toLowerCase()=="paper"){
-				alert(userInput + " vs "+ randChoice + ": Computer wins!");
-			}
-			//rock vs scissors = rock wins
-			if(userInput.toLowerCase()== "rock"  &&  randChoice.toLowerCase()=="scissors"){
-				alert(userInput + " vs "+ randChoice + ": User wins! Gamer over");
-				userWin = true;
-			}
-			//paper vs scissors = scissors wins
-			if(userInput.toLowerCase()=="paper"  &&  randChoice.toLowerCase()=="scissors"){
-				alert(userInput + " vs "+ randChoice + ": Computer wins!");
-			}
-			//paper vs rock = paper wins
-			if(userInput.toLowerCase()=="paper"  &&  randChoice.toLowerCase()=="rock"){
-				alert(userInput + " vs "+ randChoice + ": User wins! Gamer over");
-				userWin = true;
-			}
-			//scissors vs rock = rock wins
-			if(userInput.toLowerCase()=="scissors"  &&  randChoice.toLowerCase()=="rock"){
-				alert(userInput + " vs "+ randChoice + ": Computer wins!");
-			}
-			//scissors vs paper = scissors wins
-			if(userInput.toLowerCase()=="scissors"  &&  randChoice.toLowerCase()=="paper"){
-				alert(userInput + " vs "+ randChoice + ": User wins! Game over");
-				userWin = true;
-			}
-			
+	}	
+	//Print average
+	document.getElementById("main").innerHTML+= ("</br>"+" Average = "+ average.toFixed(2));
+	
+	//Print grade
+	for(i=0;i<numSubjects;i++){
+		if(  parseInt(subjectResults[i]) >= 90){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =A " );
 			
 		}
-		//If input is invalid , let the user know 
-		else{
-			alert(" Invalid Input Please try again!!!");
+		else if( parseInt(subjectResults[i]) >= 70 && parseInt(subjectResults[i])<90){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =B " );
 		}
-		
-		gameCount--;
+		else if(parseInt(subjectResults[i]) >= 60 && parseInt(subjectResults[i])<70){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =C " );
+		}
+		else if(parseInt(subjectResults[i]) >= 50 && parseInt(subjectResults[i])<60){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =D " );
+		}
+		else if(parseInt(subjectResults[i]) >= 40 && parseInt(subjectResults[i])<50){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =E " );
+		}
+		else if(parseInt(subjectResults[i]) >= 0 && parseInt(subjectResults[i])<40){
+			document.getElementById("main").innerHTML+= ("</br>"+" Grade for subject: "+(i+1)+" =Fail " );
+		}
 	}
-	if ( (gameCount== 0) && (userWin!=true) ){//next line should only be displayed after 3 user games
-	alert(" Game has been played the maximum of 3 times, Game over");
-	}
-	
-	
-	
-	
-	
 }
 
