@@ -5,13 +5,13 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="../style/style.css" />
 		
 	</head>
-	<body >
-		<header class="">
+    <body>
+        <header class="">
 			<div class="navbar">
-				<div class="logo"><a href="#">GUITAR SCHOOL</a></div>
+				<div class="logo"><a href="../index.html">GUITAR SCHOOL</a></div>
 				<div class="logo"><a href="#" onclick="showDropdown()">COURSES<span><i class="fa fa-angle-down"></i></span></a>
 					<div id="courses-dropdown" class="">
 						<div class="dropdown-section" >
@@ -37,46 +37,47 @@
 					</div>
 				</div>
 				
-				<div class="logo"><a href="store/store.html">STORE<span></span></a></div>
-				<div class="join-button"><a href="join/join.html">JOIN</a></div>
-				<div class="Login-button"><a href="login/login.html">LOGIN</a></div>
+				<div class="logo"><a href="#">STORE<span></span></a></div>
+				<div class="join-button"><a href="../join/join.html">JOIN</a></div>
+				<div class="Login-button"><a href="../login/login.html">LOGIN</a></div>
 			</div>
 			
-			<div class="responsive-nav">
+		<!--Responsive Navbar-->
+		<div class="responsive-nav">
 				<div ><a href="#" onclick="showResponsiveMenu()"><span class="fa fa-bars"></span></a></div>
 					<div id="responsive-menu">	
 						
-						<a href="store/store.html">Store</a>
+						<a href="../store/store.html">Store</a>
 						<a href="#">Courses</a>
-						
+												
 					</div>
-				<div class="join-button"><a href="join/join.html">JOIN</a></div>
-				<div class="Login-button"><a href="login/login.html">LOGIN</a></div>
-			
-			</div>
-		
-		</header>
-		<div class="row  main-image .container-fluid">
-			
-			<img src="pictures/woman-learning-guitar-online-at-home-in-bedroom-XLGF00541.jpg" alt="girl learns guitar">
-			<div class="main-text">Learn to play Guitar</div>
-			<div class="sub-text">Songs, Techniques, Chords</div>
-
-			<button class="main-image-button">Start Learning</button>
+				<div class="join-button"><a href="../join/join.html">JOIN</a></div>
+				<div class="Login-button"><a href="#">LOGIN</a></div>
 			
 		</div>
 		
-			<!--Page spaces -->
-		<div class="pageSpacer"></div>
-			<!--end page spacer-->
 		
+		</header>
+        <div class="row">		
+            <img src="../pictures/woman-learning-guitar-online-at-home-in-bedroom-XLGF00541.jpg" alt="girl learns guitar">
+            
+			
+		<!--Login Form-->
+            <div class=" row login-form">
+                <form id="loginForm"onsubmit="verifyUser()">
+					<h1 class="login-Title">Login</h1>
+						<input type="text" id="userName" name="userName" placeholder="enter userName" class="input">
+						<input type="password" id="password"  placeholder="Enter Password" class="input" >
+						<h5 id="valid-user">valid user name and password</h5>
+						<h5 id="invalid-user">invalid username or password</h5>
+						<input type="submit" id="loginButton" value="LOGIN"></br>
 
+				</form>
+				
+
+            </div>
+        </div>
 		
-			
-	
-			
-			
-			
 		<!--Footer-->
 			<div class="footer row">
 				<div class="col-lg-4 col-sm-6">
@@ -103,7 +104,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<script src="script/script.js"></script>
-	</body>
+		
+		<script src="../script/script.js"></script>
+    </body>
 </html>
